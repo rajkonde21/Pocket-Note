@@ -1,0 +1,99 @@
+:root {
+    --c1: #B38BFA;
+    --c2: #FF79F2;
+    --c3: #43E6FC;
+    --c4: #F19576;
+    --c5: #0047FF;
+    --c6: #6691FF;
+}
+*{
+    box-sizing: border-box; /*Very Important for limiting the behaviour of imbalanced box sizing*/
+}
+
+.mainbody{
+    border: 4px solid red;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+}
+.popupbody.active-modal{
+    display: none;
+}
+.popupbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid blue;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.66);
+    background-color: blur(121px);
+    position:absolute;
+    z-index: 1;
+}
+
+.popupcard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1%;
+    background-color: white;
+    border-radius: 13px;
+}
+.popupcardsub00{
+    border: 2px solid pink;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.popupcardsub{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    border: 2px solid blue;
+    margin: 10px;
+}
+.popupcardsub input[type=text]{
+    border-radius: 10px;
+    height: inherit;
+    width: 12.5em;
+    padding: 0.5em;
+    vertical-align: text-top;
+    border: 0px solid black;
+    margin-left: 1em;
+    outline: none;
+    box-shadow: 0px 0px 4px 0.5px #000;
+}
+
+.popupcardsub input[type=radio]{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--c1);
+    border-radius: 50%;
+    vertical-align: text-top;         /*Another important css feature*/
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.popupcardsub input[type=radio]:checked{
+    border: 2px solid red;  
+}
+#poph{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#pop-btn{
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #fff;
+    background-color: black;
+    padding: 0.2em 2.5em;
+    border-radius: 0.3em;
+}
+#pop-btn:active{
+    background-color: rgba(0, 0, 0, 0.762);
+
+}
