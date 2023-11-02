@@ -1,5 +1,57 @@
 .noteaddermainbody{
-    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 5px solid black;
+    background-color: #E8E8E8;
+    height: 100%;
+}
+.arrowback.notesadders{
+    margin-right: 1em;
+}
+.Notesadd{
     
+    flex-grow: 1;
+    border:4px solid red ;
+    background-color: #F7ECDC;
+}
+.timeandnotes{
+    border: 4px solid yellow;
+    display: flex;
+    overflow: hidden;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.timeadder{
+margin-left:1em ;                          
+border: 4px solid rebeccapurple;
+font-weight: 600;
+width: min-content;
+}
+.timeaddernone{
+    display: flex;
+    border: 4px solid black;
+    width: 65%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.formofnotes{
+    border:4px solid navy;
+    position:relative;
+}
+.notestext{
+    padding: 3%;
+    font-size: large;
+    border: 4px solid green;
+    margin: auto 5%;
+    width: 90%;
+    height: 10em;
+    border-radius: 10px;
+}
+.notesbutton{
+    background-color: transparent;
+    outline: transparent;
+    border: transparent;
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
 }

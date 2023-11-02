@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/sidebar.css";
-function Sidebar({ onDataClick }) {
+function Sidebar({ onDataClick ,togglepop }) {
   const [allInfoObjects, setAllInfoObjects] = useState([]);
 
   
@@ -21,14 +21,21 @@ function Sidebar({ onDataClick }) {
 
     onDataClick({x,y});
     sideb.style.display = 'none';
-    popupbody.style.display = 'block';
+    popupbody.style.display = 'flex';
     
   }
+
+  const popupopener = () => {
+    togglepop("flase")
+   /*  const popupbody = document.querySelector(".popupbody");
+    popupbody.classList.remove("active-modal"); */
+  };
+
   return (
     <div className="Sidebarmain">
       <div className="notesInfolist0">
         <h1>Pocket Notes</h1>
-        <button> + Create Notes group</button>
+        <button onClick={popupopener}> + &emsp; Create Notes group</button>
       </div>
       <div>
         {allInfoObjects.map((info, index) => (
