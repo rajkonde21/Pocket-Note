@@ -14,8 +14,9 @@ function Notes() {
   const handleFormSubmit = ({ groupName, selectedColor }) => {
     setStoredData({ groupName, selectedColor });
   };
-  const handletoggle = ( x ) => {
-    setShowPopup(x);
+  const handletoggle = () => {
+    
+    setShowPopup(!showPopup);
   };
   useEffect(() => {
     const storedNotesInfo = localStorage.getItem("NotesInfo");
@@ -27,7 +28,7 @@ function Notes() {
   }, []);
   return (
     <div className='mainbody'>
-      {showPopup && <Popup onFormSubmit={handleFormSubmit} />}
+      {showPopup && <Popup onFormSubmit={handleFormSubmit} togglepops ={handletoggle}/>}
       <Sidebar storedData={{ storedData }} onDataClick={handleNoteSelection} togglepop ={handletoggle} />
       <Notesadder selectedX={selectedX} />
     </div>

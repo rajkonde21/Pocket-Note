@@ -26,7 +26,7 @@ function Sidebar({ onDataClick ,togglepop }) {
   }
 
   const popupopener = () => {
-    togglepop("flase")
+    togglepop();
    /*  const popupbody = document.querySelector(".popupbody");
     popupbody.classList.remove("active-modal"); */
   };

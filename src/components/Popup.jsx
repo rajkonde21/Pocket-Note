@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from "react";
 import "../css/popup.css";
-const Popup = ({onFormSubmit}) => {
+const Popup = ({onFormSubmit,togglepops}) => {
   const [card , setCard] = useState(false); //toggle hide
   const [groupName, setGroupName] = useState("");   //title
   const [selectedColor, setSelectedColor] = useState("");  //color
@@ -35,7 +35,8 @@ const Popup = ({onFormSubmit}) => {
 
 
   const togglecardstate = () =>{
-    setCard(!card);
+    togglepops();
+    /* setCard(!card); */   //There are numerous ways to hide a component I prefer the oone in which u just dont load one.
     setGroupName("");
     setSelectedColor("");
   }
@@ -68,7 +69,7 @@ const Popup = ({onFormSubmit}) => {
               </label>
             </div>
         </div>
-        <div className="popupcardsub00">
+        <div className="popupcardsub00" id="btnpopup">
             <button id="pop-btn" onClick={handleFormSubmit}>Create</button>
         </div>
       </div>
