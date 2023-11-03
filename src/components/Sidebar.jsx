@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/sidebar.css";
-function Sidebar({ onDataClick ,togglepop }) {
+function Sidebar({ storedData,onDataClick ,togglepop }) {
   const [allInfoObjects, setAllInfoObjects] = useState([]);
 
   
@@ -9,7 +9,7 @@ function Sidebar({ onDataClick ,togglepop }) {
     console.log("Stored Notes Info:", storedNotesInfo); // Debugging statement
     const infoArray = Object.values(storedNotesInfo);
     setAllInfoObjects(infoArray);
-  }, []);
+  }, [storedData]);
   
   const popupbody = document.querySelector('.noteaddermainbody'); //enable notesadder
   const sideb = document.querySelector('.Sidebarmain'); //disable sidebar notesadder
@@ -20,7 +20,7 @@ function Sidebar({ onDataClick ,togglepop }) {
     console.log(`This is x : ${x}`);
 
     onDataClick({x,y});
-    sideb.style.display = 'none';
+    sideb.style.display = 'block';
     popupbody.style.display = 'flex';
     
   }

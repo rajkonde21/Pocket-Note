@@ -56,3 +56,93 @@ width: min-content;
     right: 25px;
     bottom: 10px;
 }
+@media only screen and (min-width: 701px) {
+
+    .noteaddermainbody{
+        display: flex;
+        height: 97%;
+        border-bottom-left-radius: 2em;
+        width: fill;
+    }
+    .arrowback.notesadders{
+        margin:auto 2em;
+        z-index: 0;
+    }
+    .Notesadd{
+        flex-grow: 1;
+        border:4px solid red ;
+        background-color: #F7ECDC;
+    }
+    .timeandnotes{
+        border: 4px solid yellow;
+        display: flex;
+        overflow: hidden;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .timeadder{
+    margin-left:1em ;                          
+    border: 4px solid rebeccapurple;
+    font-weight: 600;
+    width: min-content;
+    }
+    .timeaddernone{
+        display: flex;
+        border: 4px solid black;
+        width: 65%;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .formofnotes{
+        margin: 1em;
+        border:4px solid navy;
+        position:relative;
+    }
+    .notestext{
+        padding: 1em;
+        font-size: large;
+        border: 4px solid green;
+        margin: auto 1%;
+        width: fill;
+        height: 10em;
+        border-radius: 10px;
+    }
+    .notesbutton{
+        background-color: transparent;
+        outline: transparent;
+        border: transparent;
+        position: absolute;
+        font-size: x-large;
+        right: 25px;
+        bottom: 15px;
+    }
+    .bydeftextarea{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid blue;
+        position: absolute;
+        background-color: transparent;
+        width: fill;
+        height: fill;
+    }
+    .bydeftextarea1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid red;
+        position: absolute;
+        background-color: #F7ECDC;
+        width: fill;
+        height: fill;
+        z-index: 1;
+    }
+    .bg-info{
+        border: 4px solid green;
+        width: min-content;
+    }
+    .Sidebarmain {
+        /* Styles for wider screens */
+        display: flex; /* or any other display value you want */
+      }
+}
