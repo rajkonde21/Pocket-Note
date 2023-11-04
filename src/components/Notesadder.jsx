@@ -10,6 +10,7 @@ const Notesadder = ({ selectedX }) => {
   const [notes, setNotes] = useState([]); // array
   const [key, setKey] = useState(""); // State to manage the key
   const [yValue, setYValue] = useState("");
+  const screenWidth = window.innerWidth;
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,8 +78,11 @@ const Notesadder = ({ selectedX }) => {
     const sideb = document.querySelector(".Sidebarmain"); //disable sidebar notesadder
     console.log("Clearing key...");
     setKey("");
-/*     sideb.style.display = "block";
-    popupbody.style.display = "none"; */
+    if (screenWidth < 701) {   
+      sideb.style.display = 'block';
+      popupbody.style.display = 'none';
+     }
+    
   };
   return (
     <div className="noteaddermainbody">

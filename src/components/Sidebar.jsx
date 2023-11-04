@@ -3,7 +3,7 @@ import "../css/sidebar.css";
 function Sidebar({ storedData,onDataClick ,togglepop }) {
   const [allInfoObjects, setAllInfoObjects] = useState([]);
   const [selectedRadio, setSelectedRadio] = useState(null);
-  
+  const screenWidth = window.innerWidth;
   useEffect(() => {
     const storedNotesInfo = JSON.parse(localStorage.getItem("NotesInfo")) || {};
     console.log("Stored Notes Info:", storedNotesInfo); // Debugging statement
@@ -22,9 +22,10 @@ function Sidebar({ storedData,onDataClick ,togglepop }) {
     setSelectedRadio(x);
      
     onDataClick({x,y});
-    sideb.style.display = 'block';
-    popupbody.style.display = 'flex';
-    
+    if (screenWidth < 701) {   
+    sideb.style.display = 'none';
+   }
+   popupbody.style.display = 'flex';
   }
 
   const popupopener = () => {

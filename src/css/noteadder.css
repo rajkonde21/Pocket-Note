@@ -2,7 +2,6 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid black;
     background-color: #E8E8E8;
     height: 100%;
 }
@@ -12,11 +11,9 @@
 .Notesadd{
     
     flex-grow: 1;
-    border:4px solid red ;
     background-color: #F7ECDC;
 }
 .timeandnotes{
-    border: 4px solid yellow;
     display: flex;
     overflow: hidden;
     margin-top: 1em;
@@ -24,25 +21,21 @@
 }
 .timeadder{
 margin-left:1em ;                          
-border: 4px solid rebeccapurple;
 font-weight: 600;
 width: min-content;
 }
 .timeaddernone{
     display: flex;
-    border: 4px solid black;
     width: 65%;
     margin-left: 1em;
     margin-right: 1em;
 }
 .formofnotes{
-    border:4px solid navy;
     position:relative;
 }
 .notestext{
     padding: 3%;
     font-size: large;
-    border: 4px solid green;
     margin: auto 5%;
     width: 90%;
     height: 10em;
@@ -56,6 +49,8 @@ width: min-content;
     right: 25px;
     bottom: 10px;
 }
+.bydeftextarea{
+    display: none;}
 @media only screen and (min-width: 701px) {
 
     .noteaddermainbody{
@@ -76,11 +71,10 @@ width: min-content;
     }
     .Notesadd{
         flex-grow: 1;
-        border:4px solid red ;
+        
         background-color: #F7ECDC;
     }
     .timeandnotes{
-        border: 4px solid yellow;
         display: flex;
         overflow: hidden;
         margin-top: 1em;
@@ -88,26 +82,23 @@ width: min-content;
     }
     .timeadder{
     margin-left:1em ;                          
-    border: 4px solid rebeccapurple;
+    
     font-weight: 600;
     width: min-content;
     }
     .timeaddernone{
         display: flex;
-        border: 4px solid black;
         width: 65%;
         margin-left: 1em;
         margin-right: 1em;
     }
     .formofnotes{
         margin: 1em;
-        border:4px solid navy;
         position:relative;
     }
     .notestext{
         padding: 1em;
         font-size: large;
-        border: 4px solid green;
         margin: auto 1%;
         width: fill;
         height: 10em;
@@ -126,7 +117,6 @@ width: min-content;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 5px solid blue;
         position: absolute;
         background-color: transparent;
         width: fill;
@@ -136,7 +126,6 @@ width: min-content;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 5px solid red;
         position: absolute;
         background-color: #F7ECDC;
         width: fill;
@@ -144,11 +133,11 @@ width: min-content;
         z-index: 1;
     }
     .bg-info{
-        border: 4px solid green;
         width: min-content;
     }
     .Sidebarmain {
         /* Styles for wider screens */
         display: flex; /* or any other display value you want */
       }
+      
 }

@@ -2,7 +2,6 @@
     display: block;
     height: inherit;
     width: auto;
-    border: 6px solid red;
 }
 .Sidebarmain button{
     background-color: black;
@@ -14,18 +13,16 @@
     border-radius: 25px;
 }
 .Sidebarmain h1{
-    border: 4px solid yellow;
     text-align: left;
     padding-left:1em ;
 }
 .notesInfolist0{
-    border: 4px solid brown;
+    margin-bottom: 10px;
 }
 .notesInfolist{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 4px solid green;
     padding: 1em;
     font-size: large;
     font-weight: 800;
@@ -71,19 +68,16 @@ font-weight: 500;
 color: white;
 width: 4em;
 height: 4em;
-border: 4px solid brown;
 border-radius: 50%;
 }
 .notesInfolist .initialsff{
 margin-left: 1em;
 width: fit-content;
-border: 4px solid brown;
 }
 @media only screen and (min-width: 701px) {
     .Sidebarmain{
         display: block;
         height: inherit;
         width: 30%;
-        border: 6px solid red;
     }
 }
