@@ -65,8 +65,14 @@ width: min-content;
         width: fill;
     }
     .arrowback.notesadders{
-        margin:auto 2em;
+        height: fit-content;
+        width: 25px;
+        margin:auto 1em;
         z-index: 0;
+    }
+    #imgarr{
+        vertical-align: middle;
+        width: inherit;
     }
     .Notesadd{
         flex-grow: 1;

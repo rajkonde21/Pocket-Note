@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/sidebar.css";
 function Sidebar({ storedData,onDataClick ,togglepop }) {
   const [allInfoObjects, setAllInfoObjects] = useState([]);
-
+  const [selectedRadio, setSelectedRadio] = useState(null);
   
   useEffect(() => {
     const storedNotesInfo = JSON.parse(localStorage.getItem("NotesInfo")) || {};
@@ -19,6 +19,8 @@ function Sidebar({ storedData,onDataClick ,togglepop }) {
     const y = info.infogn.selectedColor;
     console.log(`This is x : ${x}`);
 
+    setSelectedRadio(x);
+     
     onDataClick({x,y});
     sideb.style.display = 'block';
     popupbody.style.display = 'flex';
@@ -31,6 +33,8 @@ function Sidebar({ storedData,onDataClick ,togglepop }) {
     popupbody.classList.remove("active-modal"); */
   };
 
+
+
   return (
     <div className="Sidebarmain">
       <div className="notesInfolist0">
@@ -40,7 +44,9 @@ function Sidebar({ storedData,onDataClick ,togglepop }) {
       <div>
         {allInfoObjects.map((info, index) => (
           <div key={index}>
-            <div className="notesInfolist" onClick={() => handlenotesadder(info)}>
+            <div className={`notesInfolist ${selectedRadio === info.infogn.groupName ? 'active' : ''}`} onClick={() => handlenotesadder(info)}>
+            <div id="fill"></div>
+              <input type="radio" name="sellist1" id="sellist1" checked={selectedRadio === info.infogn.groupName} style={{ display: "none" }}/>
               <div className="initials" style={{backgroundColor:`${info.infogn.selectedColor}`}}> {info.infogn.groupName.slice(0, 2).toUpperCase()}</div>
               <div className="initialsff">{info.infogn.groupName}</div>
             </div>

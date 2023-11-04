@@ -111,7 +111,7 @@ const Notesadder = ({ selectedX }) => {
       <div className="notesadder">
         <div className="notesInfolist">
           <div className="arrowback notesadders" onClick={handlearrow}>
-            <img src={arrow} />
+            <img id = "imgarr" src={arrow} />
           </div>
           <div
             className="initials"
