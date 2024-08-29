@@ -6,12 +6,12 @@ import bg from "../assets/bg.png";
 import lock from "../assets/lock.svg";
 
 const Notesadder = ({ selectedX }) => {
-  const [note, setNote] = useState(""); // single note
-  const [notes, setNotes] = useState([]); // array
-  const [key, setKey] = useState(""); // State to manage the key
+  const [note, setNote] = useState(""); 
+  const [notes, setNotes] = useState([]); 
+  const [key, setKey] = useState(""); 
   const [yValue, setYValue] = useState("");
   const screenWidth = window.innerWidth;
-  // Function to handle form submission
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,23 +33,23 @@ const Notesadder = ({ selectedX }) => {
 
       const newNote = { text: note, timestamp: timestamp };
 
-      // Save the note in local storage
+      
       const storedNotesInfo =
         JSON.parse(localStorage.getItem("NotesInfo")) || {};
 
-      // Check if the key already exists, if not, initialize an empty object
+      
       if (!storedNotesInfo[key]) {
         storedNotesInfo[key] = { infogn: {}, notesgn: [] };
       }
 
-      // Ensure that "notesgn" is an array and add the new note
+      
       if (!Array.isArray(storedNotesInfo[key].notesgn)) {
         storedNotesInfo[key].notesgn = [newNote];
       } else {
         storedNotesInfo[key].notesgn.push(newNote);
       }
 
-      localStorage.setItem("NotesInfo", JSON.stringify(storedNotesInfo)); // store the array back to local storage
+      localStorage.setItem("NotesInfo", JSON.stringify(storedNotesInfo)); 
 
       setNotes([...notes, newNote]);
       setNote("");
@@ -60,22 +60,22 @@ const Notesadder = ({ selectedX }) => {
   useEffect(() => {
     const storedNotesInfo = JSON.parse(localStorage.getItem("NotesInfo")) || {};
     console.log("selectedX.x:", selectedX.x);
-    // Check if the key (selectedX.x) already exists, and if so, load the notes for that key
+    
     if (
       storedNotesInfo[selectedX.x] &&
       Array.isArray(storedNotesInfo[selectedX.x].notesgn)
     ) {
       setNotes(storedNotesInfo[selectedX.x].notesgn);
     } else {
-      setNotes([]); // Initialize with an empty array if the key doesn't exist or notesgn is not an array
+      setNotes([]); 
       setKey(null);
     }
     setKey(selectedX.x);
     setYValue(selectedX.y);
   }, [selectedX]);
   const handlearrow = () => {
-    const popupbody = document.querySelector(".noteaddermainbody"); //enable notesadder
-    const sideb = document.querySelector(".Sidebarmain"); //disable sidebar notesadder
+    const popupbody = document.querySelector(".noteaddermainbody"); 
+    const sideb = document.querySelector(".Sidebarmain"); 
     console.log("Clearing key...");
     setKey("");
     if (screenWidth < 701) {   
@@ -138,7 +138,7 @@ const Notesadder = ({ selectedX }) => {
         <textarea
           className="notestext"
           type="textarea"
-          placeholder="Enter your note..."
+          placeholder="Enter your text here............"
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />

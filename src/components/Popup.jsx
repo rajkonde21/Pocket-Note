@@ -1,30 +1,30 @@
 import React,{ useState, useEffect } from "react";
 import "../css/popup.css";
 const Popup = ({onFormSubmit,togglepops}) => {
-  const [card , setCard] = useState(false); //toggle hide
-  const [groupName, setGroupName] = useState("");   //title
-  const [selectedColor, setSelectedColor] = useState("");  //color
+  const [card , setCard] = useState(false); 
+  const [groupName, setGroupName] = useState("");   
+  const [selectedColor, setSelectedColor] = useState("");  
   const [noteinfo ,setNoteInfo] = useState(" ")
   const [notesinfo, setNotesInfo] = useState([]);
   const handleFormSubmit = (e) => {
     e.preventDefault();
     try {
       if (groupName === "" || selectedColor === "") {
-        throw new Error("Please Fill all the Fields");      //Error messages
+        throw new Error("Please Fill all the Fields");      
       }
       const newNoteInfo = { groupName , selectedColor };
-      // Save the note in local storage
-      const storedNotesInfo = JSON.parse(localStorage.getItem("NotesInfo")) || {};    //fetch the array of notes in storedNotes
+      
+      const storedNotesInfo = JSON.parse(localStorage.getItem("NotesInfo")) || {};   
       storedNotesInfo[groupName] = {infogn:newNoteInfo};
-      //storedNotesInfo.push(newNoteInfo);                                              //push the new element in storenotes [1,2,3, .. ..]
-      localStorage.setItem("NotesInfo", JSON.stringify(storedNotesInfo));             //store the array back to the localstorage
+      
+      localStorage.setItem("NotesInfo", JSON.stringify(storedNotesInfo));             
 
       setNotesInfo([...notesinfo, newNoteInfo]);
       setNoteInfo("");
 
 
-      onFormSubmit({ groupName, selectedColor }); // Call the parent component's callback function to store the values
-      togglecardstate(); // Close the popup after submission
+      onFormSubmit({ groupName, selectedColor }); 
+      togglecardstate(); 
     }
      catch (error) {
       console.error("An error caught");
@@ -36,12 +36,12 @@ const Popup = ({onFormSubmit,togglepops}) => {
 
   const togglecardstate = () =>{
     togglepops();
-    /* setCard(!card); */   //There are numerous ways to hide a component I prefer the oone in which u just dont load one.
+   
     setGroupName("");
     setSelectedColor("");
   }
   const stopPropagation = (event) => {
-    event.stopPropagation(); // Prevent the click event from propagating to popupbody
+    event.stopPropagation(); 
   }
 
   return (

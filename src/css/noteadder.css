@@ -2,7 +2,8 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #E8E8E8;
+    background-color: #001F8B;
+    
     height: 100%;
 }
 .arrowback.notesadders{
@@ -11,7 +12,7 @@
 .Notesadd{
     
     flex-grow: 1;
-    background-color: #F7ECDC;
+    background-color: #DAE5F5;
 }
 .timeandnotes{
     display: flex;
@@ -36,6 +37,7 @@ width: min-content;
 .notestext{
     padding: 3%;
     font-size: large;
+    font-family: roboto;
     margin: auto 5%;
     width: 90%;
     height: 10em;
@@ -72,7 +74,7 @@ width: min-content;
     .Notesadd{
         flex-grow: 1;
         
-        background-color: #F7ECDC;
+        background-color: #DAE5F5;
     }
     .timeandnotes{
         display: flex;
@@ -127,7 +129,7 @@ width: min-content;
         align-items: center;
         justify-content: center;
         position: absolute;
-        background-color: #F7ECDC;
+        background-color:#DAE5F5;
         width: fill;
         height: fill;
         z-index: 1;
@@ -136,8 +138,8 @@ width: min-content;
         width: min-content;
     }
     .Sidebarmain {
-        /* Styles for wider screens */
-        display: flex; /* or any other display value you want */
+       
+        display: flex; 
       }
       
 }
